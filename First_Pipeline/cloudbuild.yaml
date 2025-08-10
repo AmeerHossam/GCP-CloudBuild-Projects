@@ -1,0 +1,8 @@
+steps:
+- name: 'python:3.8-slim'
+  entrypoint: 'python3'
+  args: ['hello.py']
+  id: 'Run Python Script'
+
+options:
+  logging: CLOUD_LOGGING_ONLY
