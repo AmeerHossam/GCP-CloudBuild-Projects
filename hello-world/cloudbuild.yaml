@@ -3,6 +3,6 @@ steps:
   entrypoint: 'python3'
   args: ['hello.py']
   id: 'Run Python Script'
-
+  dir: 'hello-world' # Specify the subdirectory
 options:
   logging: CLOUD_LOGGING_ONLY
