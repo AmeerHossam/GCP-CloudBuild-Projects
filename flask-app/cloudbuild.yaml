@@ -17,7 +17,6 @@ steps:
       - '--region'
       - 'us-central1'
       - '--platform'
-      - 'managed'
       - '--allow-unauthenticated'
     dir: 'flask-app'
 options:
