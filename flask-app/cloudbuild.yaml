@@ -1,0 +1,22 @@
+# Cloud Build configuration file for building and deploying a Flask app to Google Cloud Run
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'us-central1-docker.pkg.dev/cicd-project-467911/artifact-repo/pyapp:latest', '.']
+    dir: 'flask-app'
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'us-central1-docker.pkg.dev/cicd-project-467911/artifact-repo/pyapp:latest']
+    dir: 'flask-app'
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: 'gcloud'
+    args:
+      - 'run'
+      - 'deploy'
+      - 'pyapp'
+      - '--image'
+      - 'us-central1-docker.pkg.dev/cicd-project-467911/artifact-repo/pyapp:latest'
+      - '--region'
+      - 'us-central1'
+      - '--platform'
+      - 'managed'
+      - '--allow-unauthenticated'
+    dir: 'flask-app'
