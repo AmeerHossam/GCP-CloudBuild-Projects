@@ -6,6 +6,6 @@ steps:
 artifacts:
   objects:
     location: gs://go-app-registry
-    paths: ["./go-app"]
+    paths: ["./go-app-registry"]
 options:
   logging: CLOUD_LOGGING_ONLY
