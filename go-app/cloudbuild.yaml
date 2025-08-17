@@ -1,0 +1,9 @@
+steps:
+- name: golang
+  args: ["go","build", "-o","go-app","." ]
+  dir: 'go-app'
+
+artifacts:
+  objects:
+    location: gs://go-app-registry
+    paths: ["./go-app"]
