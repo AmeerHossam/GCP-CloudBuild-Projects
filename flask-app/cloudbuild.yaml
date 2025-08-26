@@ -13,7 +13,7 @@ steps:
       - 'deploy'
       - 'pyapp'
       - '--image'
-      - 'us-central1-docker.pkg.dev/cicd-project-467911/artifact-repo/pyapp:latest'
+      - 'us-central1-docker.pkg.dev/${PROJECT_ID}/artifact-repo/pyapp:latest'
       - '--region'
       - 'us-central1'
       - '--platform'
